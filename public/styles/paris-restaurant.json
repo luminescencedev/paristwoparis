@@ -1,0 +1,454 @@
+{
+  "version": 8,
+  "id": "paris-restaurant",
+  "name": "Paris Restaurant",
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://tiles.openfreemap.org/planet"
+    }
+  },
+  "sprite": "https://tiles.openfreemap.org/sprites/ofm_f384/ofm",
+  "glyphs": "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "Background",
+      "type": "background",
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "background-color": "#f5f5f5"
+      }
+    },
+    {
+      "id": "Residential",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "maxzoom": 14,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-color": "#e8e8e8"
+      },
+      "filter": ["in", "class", "neighbourhood", "residential", "suburb"]
+    },
+    {
+      "id": "Sand",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 8,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "#f4e4bc",
+        "fill-opacity": 0.5
+      },
+      "filter": ["==", "class", "sand"]
+    },
+    {
+      "id": "Grass",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 8,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "#d4e4bc",
+        "fill-opacity": 0.5
+      },
+      "filter": ["==", "class", "grass"]
+    },
+    {
+      "id": "Wood",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landcover",
+      "minzoom": 8,
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-antialias": false,
+        "fill-color": "#c4d4ac",
+        "fill-opacity": 0.5
+      },
+      "filter": ["==", "class", "wood"]
+    },
+    {
+      "id": "Water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-color": "#4a90e2"
+      },
+      "filter": ["all", ["!=", "brunnel", "tunnel"]]
+    },
+    {
+      "id": "River",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "waterway",
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "line-color": "#4a90e2",
+        "line-width": {
+          "stops": [
+            [9, 1],
+            [18, 3]
+          ]
+        }
+      },
+      "filter": ["!=", "brunnel", "tunnel"]
+    },
+    {
+      "id": "Bridge",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "layout": { "visibility": "visible" },
+      "paint": { "fill-color": "#cccccc", "fill-opacity": 0.7 },
+      "filter": ["==", "brunnel", "bridge"]
+    },
+    {
+      "id": "Road network",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#ffffff",
+        "line-width": [
+          "interpolate",
+          ["linear", 2],
+          ["zoom"],
+          4,
+          0.5,
+          5,
+          0.75,
+          6,
+          1,
+          10,
+          ["match", ["get", "class"], ["motorway"], 2.5, ["trunk"], 1.5, 1],
+          12,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway"],
+            4,
+            ["trunk"],
+            2,
+            ["primary"],
+            2.5,
+            ["secondary", "tertiary"],
+            2,
+            ["minor"],
+            1,
+            ["pier", "service", "track"],
+            0.5,
+            0.5
+          ],
+          14,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway"],
+            6,
+            ["trunk"],
+            3,
+            ["primary"],
+            5,
+            ["secondary"],
+            4,
+            ["tertiary"],
+            3,
+            ["minor"],
+            2,
+            ["pier", "service", "track"],
+            1,
+            2
+          ],
+          16,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway", "trunk", "primary"],
+            8,
+            ["secondary"],
+            7,
+            ["tertiary"],
+            6,
+            ["minor"],
+            4,
+            ["pier", "service", "track"],
+            2,
+            4
+          ],
+          20,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway", "trunk", "primary"],
+            28,
+            ["secondary"],
+            24,
+            ["tertiary"],
+            20,
+            ["minor", "service", "track", "pier"],
+            16,
+            16
+          ]
+        ]
+      },
+      "filter": ["!in", "class", "bridge", "ferry", "path", "rail", "transit"]
+    },
+    {
+      "id": "Road casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 4,
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "#cccccc",
+        "line-width": [
+          "interpolate",
+          ["linear", 2],
+          ["zoom"],
+          4,
+          1,
+          5,
+          1.5,
+          6,
+          2,
+          10,
+          ["match", ["get", "class"], ["motorway"], 3, ["trunk"], 2, 1.5],
+          12,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway"],
+            5,
+            ["trunk"],
+            3,
+            ["primary"],
+            3.5,
+            ["secondary", "tertiary"],
+            3,
+            ["minor"],
+            2,
+            ["pier", "service", "track"],
+            1,
+            1
+          ],
+          14,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway"],
+            8,
+            ["trunk"],
+            5,
+            ["primary"],
+            7,
+            ["secondary"],
+            6,
+            ["tertiary"],
+            5,
+            ["minor"],
+            4,
+            ["pier", "service", "track"],
+            2,
+            4
+          ],
+          16,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway", "trunk", "primary"],
+            12,
+            ["secondary"],
+            11,
+            ["tertiary"],
+            10,
+            ["minor"],
+            8,
+            ["pier", "service", "track"],
+            4,
+            8
+          ],
+          20,
+          [
+            "match",
+            ["get", "class"],
+            ["motorway", "trunk", "primary"],
+            36,
+            ["secondary"],
+            32,
+            ["tertiary"],
+            28,
+            ["minor", "service", "track", "pier"],
+            24,
+            24
+          ]
+        ]
+      },
+      "filter": ["!in", "class", "bridge", "ferry", "path", "rail", "transit"]
+    },
+    {
+      "id": "Building",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "layout": { "visibility": "visible" },
+      "paint": {
+        "fill-antialias": true,
+        "fill-color": "#d0d0d0",
+        "fill-opacity": 1
+      }
+    },
+    {
+      "id": "POI Restaurant",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 14,
+      "layout": {
+        "icon-image": "restaurant",
+        "icon-size": 0.8,
+        "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+        "text-font": ["Noto Sans Regular"],
+        "text-offset": [0, 1.5],
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333333",
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      },
+      "filter": ["==", "class", "restaurant"]
+    },
+    {
+      "id": "Place labels",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 0,
+      "maxzoom": 16,
+      "layout": {
+        "symbol-sort-key": ["to-number", ["get", "rank"]],
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": [
+          "interpolate",
+          ["linear", 1],
+          ["zoom"],
+          3,
+          11,
+          8,
+          ["match", ["get", "class"], "city", 15, 13],
+          11,
+          [
+            "match",
+            ["get", "class"],
+            "city",
+            16,
+            [
+              "suburb",
+              "neighbourhood",
+              "quarter",
+              "hamlet",
+              "isolated_dwelling"
+            ],
+            10,
+            13
+          ],
+          16,
+          [
+            "match",
+            ["get", "class"],
+            "city",
+            21,
+            [
+              "suburb",
+              "neighbourhood",
+              "quarter",
+              "hamlet",
+              "isolated_dwelling"
+            ],
+            14,
+            16
+          ]
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333333",
+        "text-halo-blur": 0,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2
+      },
+      "filter": [
+        "in",
+        "class",
+        "hamlet",
+        "isolated_dwelling",
+        "neighbourhood",
+        "province",
+        "quarter",
+        "suburb",
+        "town",
+        "village"
+      ]
+    },
+    {
+      "id": "City labels",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "maxzoom": 16,
+      "layout": {
+        "symbol-sort-key": ["to-number", ["get", "rank"]],
+        "text-field": "{name:en}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 10,
+        "text-size": [
+          "interpolate",
+          ["linear", 1],
+          ["zoom"],
+          3,
+          11,
+          8,
+          15,
+          11,
+          16,
+          16,
+          21
+        ],
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#333333",
+        "text-halo-blur": 0,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 2
+      },
+      "filter": ["==", "class", "city"]
+    }
+  ],
+  "bearing": 0,
+  "pitch": 0,
+  "center": [2.3522, 48.8566],
+  "zoom": 10
+}
