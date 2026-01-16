@@ -118,7 +118,7 @@ export default function Home() {
         </div>
 
         {/* Barre de recherche et filtres flottants au-dessus de la map */}
-        <div 
+        <div
           className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-2 flex items-center gap-3 flex-wrap max-w-3xl"
           style={{ zIndex: 100000 }}
         >
@@ -162,7 +162,7 @@ export default function Home() {
         </div>
 
         {/* Légende */}
-        <div 
+        <div
           className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-lg p-4"
           style={{ zIndex: 100000 }}
         >
