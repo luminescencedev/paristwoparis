@@ -1,0 +1,120 @@
+[
+  {
+    "id": "jugetsudo",
+    "name": "Jugetsudo",
+    "cuisineType": "japanese",
+    "coordinates": {
+      "longitude": 2.3376,
+      "latitude": 48.8606
+    },
+    "address": "95 Rue de Seine, 75006 Paris",
+    "arrondissement": 6,
+    "googleMapsUrl": "https://maps.app.goo.gl/example1",
+    "website": "https://www.jugetsudo.fr",
+    "instagram": "@jugetsudo_paris",
+    "phone": "+33 1 46 33 94 90",
+    "tagline": "Salon de thé japonais authentique",
+    "keywords": ["thé", "matcha", "wagashi", "zen", "traditionnel"],
+    "mainImage": "/images/jugetsudo-main.jpg",
+    "gallery": ["/images/jugetsudo-1.jpg", "/images/jugetsudo-2.jpg"],
+    "ownerStory": "Fondé par une famille japonaise passionnée par la culture du thé, Jugetsudo offre une expérience authentique dans un cadre traditionnel parisien.",
+    "authenticityNote": "Un vrai salon de thé japonais avec des matcha de qualité importés directement du Japon. L'ambiance et la préparation respectent les traditions.",
+    "isVerified": true,
+    "addedDate": "2026-01-15"
+  },
+  {
+    "id": "nanashi",
+    "name": "Nanashi",
+    "cuisineType": "japanese",
+    "coordinates": {
+      "longitude": 2.3522,
+      "latitude": 48.8566
+    },
+    "address": "57 Rue Charlot, 75003 Paris",
+    "arrondissement": 3,
+    "googleMapsUrl": "https://maps.app.goo.gl/example2",
+    "website": "https://www.nanashi.fr",
+    "instagram": "@nanashi_paris",
+    "phone": "+33 1 44 61 45 49",
+    "tagline": "Cuisine japonaise créative et authentique",
+    "keywords": ["bento", "ramen", "curry", "moderne", "fait maison"],
+    "mainImage": "/images/nanashi-main.jpg",
+    "gallery": ["/images/nanashi-1.jpg", "/images/nanashi-2.jpg"],
+    "ownerStory": "Le chef, originaire de Tokyo, a voulu recréer l'atmosphère des petits restaurants de quartier japonais avec des recettes familiales transmises de génération en génération.",
+    "authenticityNote": "Des plats vraiment faits maison, des saveurs équilibrées et authentiques. Les bentos rappellent ceux qu'on trouve au Japon.",
+    "isVerified": true,
+    "addedDate": "2026-01-15"
+  },
+  {
+    "id": "goguette",
+    "name": "La Goguette",
+    "cuisineType": "korean",
+    "coordinates": {
+      "longitude": 2.351,
+      "latitude": 48.875
+    },
+    "address": "20 Rue de Belleville, 75020 Paris",
+    "arrondissement": 20,
+    "googleMapsUrl": "https://maps.app.goo.gl/example3",
+    "instagram": "@lagoguette_paris",
+    "phone": "+33 6 12 34 56 78",
+    "tagline": "Street food coréenne authentique",
+    "keywords": ["tteokbokki", "kimbap", "street food", "casual", "épicé"],
+    "mainImage": "/images/goguette-main.jpg",
+    "gallery": ["/images/goguette-1.jpg"],
+    "ownerStory": "Une jeune coréenne qui a grandi entre Paris et Séoul a ouvert ce lieu pour partager la vraie street food de son enfance, celle qu'on trouve dans les pojangmacha.",
+    "authenticityNote": "Les saveurs et textures sont justes. Le tteokbokki a le bon niveau de piquant et la texture parfaite. On se croirait vraiment dans les rues de Séoul.",
+    "isVerified": true,
+    "addedDate": "2026-01-15"
+  },
+  {
+    "id": "sodam",
+    "name": "Sodam",
+    "cuisineType": "korean",
+    "coordinates": {
+      "longitude": 2.367,
+      "latitude": 48.882
+    },
+    "address": "61 Rue du Faubourg Poissonnière, 75009 Paris",
+    "arrondissement": 9,
+    "googleMapsUrl": "https://maps.app.goo.gl/example4",
+    "website": "https://www.sodam-paris.com",
+    "instagram": "@sodam_paris",
+    "phone": "+33 1 48 78 03 70",
+    "tagline": "Restaurant coréen traditionnel",
+    "keywords": ["bbq", "bibimbap", "banchan", "traditionnel", "convivial"],
+    "mainImage": "/images/sodam-main.jpg",
+    "gallery": [
+      "/images/sodam-1.jpg",
+      "/images/sodam-2.jpg",
+      "/images/sodam-3.jpg"
+    ],
+    "ownerStory": "Famille coréenne installée à Paris depuis 20 ans, ils ont voulu créer un lieu chaleureux où retrouver les goûts de la maison avec des recettes transmises par la grand-mère.",
+    "authenticityNote": "Les banchan (accompagnements) sont variés et faits maison, signe d'un vrai restaurant coréen. Le kimchi est fermenté sur place. Ambiance familiale et authentique.",
+    "isVerified": true,
+    "addedDate": "2026-01-15"
+  },
+  {
+    "id": "kunitoraya",
+    "name": "Kunitoraya",
+    "cuisineType": "japanese",
+    "coordinates": {
+      "longitude": 2.3381,
+      "latitude": 48.8656
+    },
+    "address": "5 Rue Villedo, 75001 Paris",
+    "arrondissement": 1,
+    "googleMapsUrl": "https://maps.app.goo.gl/example5",
+    "website": "https://www.kunitoraya.com",
+    "instagram": "@kunitoraya",
+    "phone": "+33 1 47 03 33 65",
+    "tagline": "Maître des udon artisanaux",
+    "keywords": ["udon", "tempura", "fait maison", "artisanal", "nouilles"],
+    "mainImage": "/images/kunitoraya-main.jpg",
+    "gallery": ["/images/kunitoraya-1.jpg", "/images/kunitoraya-2.jpg"],
+    "ownerStory": "Spécialiste des udon depuis des générations au Japon, le chef prépare ses nouilles chaque matin selon la technique traditionnelle.",
+    "authenticityNote": "Les udon sont faits maison quotidiennement, on sent la différence ! La texture est parfaite, ferme et élastique. Un des meilleurs udon que j'ai mangé hors du Japon.",
+    "isVerified": true,
+    "addedDate": "2026-01-15"
+  }
+]
