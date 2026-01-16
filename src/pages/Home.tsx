@@ -118,7 +118,10 @@ export default function Home() {
         </div>
 
         {/* Barre de recherche et filtres flottants au-dessus de la map */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-2 z-20 flex items-center gap-3 flex-wrap max-w-3xl">
+        <div 
+          className="absolute top-10 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm rounded-xl shadow-xl p-2 flex items-center gap-3 flex-wrap max-w-3xl"
+          style={{ zIndex: 100000 }}
+        >
           {/* Barre de recherche */}
           <div className="flex-1 min-w-64">
             <SearchBar
@@ -159,7 +162,10 @@ export default function Home() {
         </div>
 
         {/* Légende */}
-        <div className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-lg p-4 z-10">
+        <div 
+          className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-lg p-4"
+          style={{ zIndex: 100000 }}
+        >
           <h3 className="text-sm font-bold mb-3 text-gray-800">Cuisine</h3>
           <div className="space-y-2">
             <div className="flex items-center gap-2">
