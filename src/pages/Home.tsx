@@ -86,8 +86,8 @@ export default function Home() {
       <Header />
 
       {/* Map Container plein écran */}
-      <div className="flex-1 overflow-hidden relative">
-        <div className="h-full w-full">
+      <div className="flex-1 overflow-hidden relative md:p-6 md:pt-0">
+        <div className="h-full w-full md:rounded-3xl md:overflow-hidden md:shadow-xl md:border-4 md:border-white">
           <Map
             initialViewState={{
               longitude: middleOfParis[0],

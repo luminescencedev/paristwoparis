@@ -23,12 +23,16 @@ export default function RestaurantModal({
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+        style={{ zIndex: 200000 }}
         onClick={onClose}
       />
 
       {/* Modal */}
-      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90vw] max-w-2xl max-h-[85vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+      <div
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-2xl max-h-[85vh] bg-white rounded-2xl shadow-2xl overflow-hidden"
+        style={{ zIndex: 200001 }}
+      >
         {/* Header avec image */}
         <div className="relative h-48 bg-linear-to-br from-gray-200 to-gray-300">
           {/* Placeholder pour l'image */}
