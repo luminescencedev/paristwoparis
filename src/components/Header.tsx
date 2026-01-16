@@ -12,7 +12,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <nav className="flex items-center justify-between gap-6">
           {/* Logo/Titre à gauche */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <Link to="/" className="block">
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
                 {t.header.title}
@@ -48,7 +48,7 @@ export default function Header() {
           </div>
 
           {/* Sélecteur de langue desktop */}
-          <div className="hidden md:block flex-shrink-0">
+          <div className="hidden md:block shrink-0">
             <LanguageSwitcher
               currentLanguage={language}
               onLanguageChange={setLanguage}
